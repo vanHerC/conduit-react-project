@@ -1,19 +1,23 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import TopNavigation from "./layout/TopNavigation";
 import Home from "./pages/Home";
+import Editor from "./components/Editor";
+import { Blank } from "./layout/Blank";
 
-function App() {
+export function App() {
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route element={<TopNavigation />}>
+            <Route path="" element={<Home />} />
+          </Route>
+          <Route element={<Blank />}>
+            <Route path="/login" element={<Editor />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
-
-export default App;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar() {
+export function Header() {
   return (
     <>
       <header className="ng-scope ng-isolate-scope">
@@ -32,5 +32,3 @@ function Navbar() {
     </>
   );
 }
-
-export default Navbar;
