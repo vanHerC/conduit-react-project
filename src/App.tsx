@@ -1,9 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import TopNavigation from "./layout/TopNavigation";
-import Home from "./pages/Home";
-import Editor from "./components/Editor";
-import { Blank } from "./layout/Blank";
+import { Home } from "./pages/Home";
 
 export function App() {
   return (
@@ -12,9 +10,6 @@ export function App() {
         <Routes>
           <Route element={<TopNavigation />}>
             <Route path="" element={<Home />} />
-          </Route>
-          <Route element={<Blank />}>
-            <Route path="/login" element={<Editor />} />
           </Route>
         </Routes>
       </BrowserRouter>
